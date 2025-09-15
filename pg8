@@ -1,0 +1,44 @@
+import pandas as pd
+
+# Load diabetes dataset from your CSV file
+df = pd.read_csv("diabetes.csv")
+
+# Display first few rows
+print("First few rows:\n", df.head())
+
+# Create new column 'bmi_category'
+def categorize_bmi(BMI):
+    if BMI < -0.02:
+        return "Low"
+    elif -0.02 <= BMI <= 0.03:
+        return "Medium"
+    else:
+        return "High"
+
+df['BMI_category'] = df['BMI'].apply(categorize_bmi)
+
+# Retrieve bmi and bmi_category
+print("\nBMI and BMI Category:\n", df[['BMI', 'BMI_category']].head())
+
+
+output:
+C:\Users\MLM\PycharmProjects\PythonProject1\.venv\Scripts\python.exe C:\Users\MLM\PycharmProjects\PythonProject1\program8.py 
+First few rows:
+    Pregnancies  Glucose  BloodPressure  ...  DiabetesPedigreeFunction  Age  Outcome
+0            6      148             72  ...                     0.627   50        1
+1            1       85             66  ...                     0.351   31        0
+2            8      183             64  ...                     0.672   32        1
+3            1       89             66  ...                     0.167   21        0
+4            0      137             40  ...                     2.288   33        1
+
+[5 rows x 9 columns]
+
+BMI and BMI Category:
+     BMI BMI_category
+0  33.6         High
+1  26.6         High
+2  23.3         High
+3  28.1         High
+4  43.1         High
+
+Process finished with exit code 0
