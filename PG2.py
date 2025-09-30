@@ -23,3 +23,4 @@ print(arr2.transpose())
 print("Sum of diagonal elements")
 print(np.trace(arr1))
 print(np.trace(arr2))
+
