@@ -14,4 +14,5 @@ print(arr[1:3,0:2])
 print(arr[0:,1:3])
 
 # to display 2nd  and 3rd element of 1st row
+
 print(arr[0:1,1:3])
